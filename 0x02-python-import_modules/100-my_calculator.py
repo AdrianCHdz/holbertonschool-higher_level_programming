@@ -3,20 +3,17 @@ if __name__ == "__main__":
     from calculator_1 import add, sub, mul, div
     from sys import argv, exit
 
-    error = "Usage: ./100-my_calculator.py <a> <operator> <b>"
-    error2 = "Unknown operator. Available operators: +, -, * and /"
+    dic = {"+":add, "-":sub, "*":mul, "/":div}
 
     if len(argv) != 4:
-        print("{}".format(error))
+        print("Usage: ./100-my_calculator.py <a> <operator> <b>")
         exit(1)
 
-    if argv[2] not in ('+', '-', "*", '/'):
-        print("{}".format(error2))
-        exit(1)
-
-    op = (add(int(argv[1]), int(argv[3])) if argv[2] is "+" else
-          ((sub(int(argv[1]), int(argv[3]))) if argv[2] is "-" else
-           ((mul(int(argv[1]), int(argv[3]))) if argv[2] is '*' else
-            div(int(argv[1]), int(argv[3])))))
-
-    print("{} {} {} = {}".format(argv[1], argv[2], argv[3], op))
+    for n in dic:
+        if argv[2] in dic:
+            if n == argv[2]:
+                dic = dic[n]
+                break
+        else:
+            print("Unknown operator. Available operators: +, -, * and /")
+    print("{}".format(dic(int(argv[1]), int(argv[3]))))
