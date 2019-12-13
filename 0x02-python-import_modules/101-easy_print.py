@@ -1,2 +1,2 @@
 #!/usr/bin/python2
-import myprint
+__import__("myprint")
