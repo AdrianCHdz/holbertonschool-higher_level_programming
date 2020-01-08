@@ -6,9 +6,9 @@ def safe_print_list_integers(my_list=[], x=0):
             print("{:d}".format(my_list[n]), end="")
             a += 0
         except (ValueError, TypeError):
-            pass
+            continue
     print()
-    return (a)
+    return a
 '''
         print(*([my_list[n] for n in range(x)]), sep="")
 '''
