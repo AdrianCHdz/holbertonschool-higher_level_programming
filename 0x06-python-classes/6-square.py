@@ -9,7 +9,7 @@ class Square:
             raise ValueError("size must be >= 0")
         if len(position) != 2 or \
            type(position[0]) != int or \
-               type(position[1]) != int:
+                type(position[1]) != int:
             raise TypeError("position must be a tuple of 2 positive integers")
         if type(position) != tuple or \
            position[0] < 0 or position[1] < 0:
