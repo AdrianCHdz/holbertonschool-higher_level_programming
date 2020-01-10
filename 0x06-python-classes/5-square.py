@@ -3,7 +3,7 @@ class Square:
     """An empty class that defines a square"""
     def __init__(self, size=0):
         """inizialization and conditioning input only to be integer"""
-        if isinstance(size, int) == False:
+        if isinstance(size, int) is False:
             raise TypeError("size must be an integer")
         if size < 0:
             raise ValueError("size must be >= 0")
@@ -20,7 +20,7 @@ class Square:
 
     @size.setter
     def size(self, value):
-        if isinstance(value, int) == False:
+        if isinstance(value, int) is False:
             raise TypeError("size must be an integer")
         if value < 0:
             raise ValueError("size must be >= 0")
@@ -33,7 +33,3 @@ class Square:
             for y in range(self.__size):
                 print("#", end="")
             print()
-        '''
-        qube = ["#" for n in range(self.__size)]
-        print(*(["".join(qube) for n in range(self.__size)]), sep="\n")
-        '''
