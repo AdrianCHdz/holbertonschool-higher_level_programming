@@ -10,10 +10,11 @@ def text_indentation(text):
     can be either float or int and returns the value
     casted to int"""
     if type(text) != str:
-        
+        raise TypeError("text must be a string")
     n = 0
     while n < len(text):
-        if text[n] == "." or text[n] == "?":
+        if text[n] is "." or text[n] is "?" or\
+           text[n] is ":":
             print(text[n], end="\n")
             print()
             n += 2
