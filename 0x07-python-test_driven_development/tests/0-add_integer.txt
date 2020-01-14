@@ -1,0 +1,103 @@
+The addition module
+================================
+
+This module has only one function calle add_integer
+as its name suggest it adds two numbers 'a' and 'b'
+being those numbers either integers or floats values.
+
+using the module
+----------------
+This function returns the addition of its arguments.
+
+>>> add_integer = __import__('0-add_integer').add_integer
+
+Numbers
+=======
+The values that recieves the function can be integers or floats
+
+Integers
+========
+If no number is given for the b statement it will take
+its default value of 98 and operate accordingly.
+
+    >>> add_integer(1, 2)
+    3
+    >>> add_integer(100, -2)
+    98
+    >>> add_integer(2)
+    100
+    >>> add_integer(98)
+    196
+
+Floats
+=======
+This function returs a value casted to integer even if
+a float value is given to the function.
+
+    >>> add_integer(100.3, -2)
+    98
+    >>> add_integer(2.7, 3.6)
+    5
+    >>> add_integer(2.5)
+    100
+    >>> add_integer(-8.5)
+    90
+
+Note
+====
+If there is no first parameter 'a' given an error will
+be risen.
+
+    >>> add_integer()
+    Traceback (most recent call last):
+        ...
+    TypeError: add_integer() missing 1 required positional argument: 'a'
+
+Non-Numbers
+===========
+
+In case the values given are not integers or floats
+a TypeError exception will raise with the message:
+"<variable> must be integer".
+
+   >>> add_integer("hello")
+   Traceback (most recent call last):
+       ...
+   TypeError: a must be an integer
+
+   >>> add_integer(1, "world")
+   Traceback (most recent call last):
+       ...
+   TypeError: b must be an integer
+
+   >>> add_integer([1, 2, 3])
+   Traceback (most recent call last):
+       ...
+   TypeError: a must be an integer
+
+   >>> add_integer({1:"a", 2:"b", 3:"c"})
+   Traceback (most recent call last):
+       ...
+   TypeError: a must be an integer
+
+   >>> add_integer((1, 2, 3), "world")
+   Traceback (most recent call last):
+       ...
+   TypeError: a must be an integer
+
+Note
+====
+
+if there are more values than the function can handle a
+exception will rise, also in Python3 leading zeros are not
+allowed on numbers.
+
+   >>> add_integer(1, 2, 3)
+   Traceback (most recent call last):
+       ...
+   TypeError: add_integer() takes from 1 to 2 positional arguments but 3 were given
+
+   >>> add_integer(01)
+   Traceback (most recent call last):
+       ...
+   SyntaxError: invalid token

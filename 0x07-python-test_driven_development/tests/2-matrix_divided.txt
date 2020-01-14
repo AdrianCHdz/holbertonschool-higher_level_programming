@@ -1,0 +1,117 @@
+The addition module
+================================
+
+This module has only one function called matrix_divided
+as it divides the elements of a list of list of integers
+by an specified divisor.
+
+using the module
+----------------
+This function returns the a bidimensional list.
+
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+Numbers
+=======
+The values that recieves the function must be a bidimensional
+list of integers or floats and a divisior that must be integer,
+it returns the values divided and rounded by 2 decimal places.
+
+Integers & Floats
+==================
+
+Note
+====
+Values inside the bidimensional list can have different type
+while being inside of the same list and have any lenght as long
+as the lists inside has the same lenght.
+
+    >>> matrix = [[1, 2, 3], [4, 5, 6]]
+    >>> matrix2 = [[2, 4], [8, 10], [6, 12]]
+    >>> floatm = [[2.5, 5], [7.5, 10]]
+    >>> floatm2 = [[5, 20.5, 35.8, 60.3], [10.5, 40, 70, 120]]
+
+    >>> matrix_divided(matrix, 2)
+    [[0.5, 1.0, 1.5], [2.0, 2.5, 3.0]]
+
+    >>> matrix_divided(matrix2, 2)
+    [[1.0, 2.0], [4.0, 5.0], [3.0, 6.0]]
+
+    >>> matrix_divided(matrix2, 4)
+    [[0.5, 1.0], [2.0, 2.5], [1.5, 3.0]]
+
+    >>> matrix_divided(floatm, 2.5)
+    [[1.0, 2.0], [3.0, 4.0]]
+
+    >>> matrix_divided(floatm2, 5)
+    [[1.0, 4.1, 7.16, 12.06], [2.1, 8.0, 14.0, 24.0]]
+
+    >>> matrix_divided([[2]], 2)
+    [[1.0]]
+
+    >>> matrix_divided([[6], [9]], 3)
+    [[2.0], [3.0]]
+
+Non-numbers
+===========
+
+The values entered as non integer or floats will raise
+an exception, also if by any means the user try to send
+a list of lists of different sizes it will raise the
+exception.
+
+   >>> matrix = [["hello", "world"], ["python", 3]]
+   >>> matrix2 = [[1, 2, 3], [4, 5]]
+
+   >>> matrix_divided(matrix, 2)
+   Traceback (most recent call last):
+       ...
+   TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+   >>> matrix_divided(matrix2, 2)
+   Traceback (most recent call last):
+       ...
+   TypeError: Each row of the matrix must have the same size
+
+   >>> matrix_divided([], 2)
+   Traceback (most recent call last):
+       ...
+   TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+   >>> matrix_divided([[]], 2)
+   Traceback (most recent call last):
+       ...
+   TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+   >>> matrix_divided([[1], [2]], "two")
+   Traceback (most recent call last):
+       ...
+   TypeError: div must be a number
+
+   >>> matrix_divided([1, 2, 3], 2)
+   Traceback (most recent call last):
+       ...
+   TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+   >>> matrix_divided()
+   Traceback (most recent call last):
+       ...
+   TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
+
+   >>> matrix_divided("hello", 2)
+   Traceback (most recent call last):
+       ...
+   TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+   >>> matrix_divided([[1, 2, 3], [4, 5, 6]])
+   Traceback (most recent call last):
+       ...
+   TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+Note
+====
+If there is ever a division by zero a raise exception will pop up.
+   >>> matrix_divided([[1, 2, 3], [4, 5, 6]], 0)
+   Traceback (most recent call last):
+       ...
+   ZeroDivisionError: division by zero

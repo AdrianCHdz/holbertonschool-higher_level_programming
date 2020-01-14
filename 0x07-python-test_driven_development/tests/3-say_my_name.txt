@@ -1,0 +1,76 @@
+The addition module
+================================
+
+This module has only one function called 3-say_my_name
+and prints the values given followed by a new line
+
+using the module
+----------------
+This function returns the a bidimensional list.
+
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+Numbers
+=======
+The values that recieves the function must be both strings.
+
+Strings
+=======
+
+    >>> say_my_name("John", "Smith")
+    My name is John Smith
+    >>> say_my_name("Walter", "White")
+    My name is Walter White
+    >>> say_my_name("Bob")
+    My name is Bob 
+    >>> say_my_name("Adrian", "Hernandez")
+    My name is Adrian Hernandez
+
+Non-strings
+===========
+The values entered as non strings will rise an exception.
+
+    >>> say_my_name(12, "White")
+    Traceback (most recent call last):
+        ...
+    TypeError: first_name must be a string
+
+    >>> say_my_name("Jonny", 12)
+    Traceback (most recent call last):
+        ...
+    TypeError: last_name must be a string
+
+    >>> say_my_name(["Derek"], "jefferson")
+    Traceback (most recent call last):
+        ...
+    TypeError: first_name must be a string
+
+    >>> say_my_name({"Stephen": "a"}, "king")
+    Traceback (most recent call last):
+        ...
+    TypeError: first_name must be a string
+
+    >>> say_my_name(("Jonna", "james"), "jameson")
+    Traceback (most recent call last):
+        ...
+    TypeError: first_name must be a string
+
+    >>> say_my_name("Jonny", 12)
+    Traceback (most recent call last):
+        ...
+    TypeError: last_name must be a string
+
+    >>> say_my_name("jeferson", ["Derek"])
+    Traceback (most recent call last):
+        ...
+    TypeError: last_name must be a string
+
+    >>> say_my_name("Jenna", {"Stephen": "a"})
+    Traceback (most recent call last):
+        ...
+    TypeError: last_name must be a string
+
+    >>> say_my_name("jameson", ("Jonna", "james"))
+    Traceback (most recent call last):
+        ...
+    TypeError: last_name must be a string
