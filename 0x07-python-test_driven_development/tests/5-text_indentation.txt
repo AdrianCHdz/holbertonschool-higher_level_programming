@@ -1,0 +1,62 @@
+The addition module
+================================
+
+This module has only one function called text_identation
+as its name suggest it prints a newline after ift finds the . or ? or :
+
+
+using the module
+----------------
+This function returns the addition of its arguments.
+
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+stirngs
+========
+
+
+    >>> text_indentation("hello. how are you? bud")
+    hello.
+    <BLANKLINE>
+    how are you?
+    <BLANKLINE>
+    bud
+    >>> text_indentation(1)
+    Traceback (most recent call last):
+       ...
+    TypeError: text must be a string
+
+    >>> text_indentation([1, 2, 3])
+    Traceback (most recent call last):
+       ...
+    TypeError: text must be a string
+
+    >>> text_indentation({1:"a", 2:"b", 3:"c"})
+    Traceback (most recent call last):
+       ...
+    TypeError: text must be a string
+
+    >>> text_indentation((1, 2, 3))
+    Traceback (most recent call last):
+        ...
+    TypeError: text must be a string
+
+Note
+====
+
+if there are more values than the function can handle a
+exception will rise, also in Python3 leading zeros are not
+allowed on numbers.
+
+   >>> text_indentation(1, 2, 3)
+   Traceback (most recent call last):
+       ...
+   TypeError: text_indentation() takes 1 positional argument but 3 were given
+
+   >>> text_indentation(01)
+   Traceback (most recent call last):
+       ...
+   SyntaxError: invalid token
+   >>> text_indentation()
+   Traceback (most recent call last):
+   TypeError: text_indentation() missing 1 required positional argument: 'text'
