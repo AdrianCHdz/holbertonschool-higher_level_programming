@@ -56,7 +56,7 @@ class Rectangle:
     def __del__(self):
         print("Bye rectangle...")
         self.__class__.number_of_instances -= 1
-
+    """
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
         if isinstance(rect_1, Rectangle) is False:
@@ -67,6 +67,7 @@ class Rectangle:
             return rect_1
         else:
             return rect_2
+    """
 
     @classmethod
     def square(cls, size=0):
