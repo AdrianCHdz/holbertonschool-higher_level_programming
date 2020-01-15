@@ -46,8 +46,8 @@ class Rectangle:
         grid = ""
         if self.__width == 0 or self.__height == 0:
             return grid
-        grid = "\n".join([grid.join(
-            [str(self.print_symbol) * self.__width])] * self.__height)
+        grid = "\n".join(
+            [str(self.print_symbol) * self.__width] * self.__height)
         return grid
 
     def __repr__(self):
