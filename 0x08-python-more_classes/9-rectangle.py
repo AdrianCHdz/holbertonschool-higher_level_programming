@@ -37,10 +37,10 @@ class Rectangle:
         return (self.width * self.height)
 
     def perimeter(self):
-        perim = (self.__width * 2) + (self.__height * 2)
+
         if self.__width == 0 or self.__height == 0:
-            perim = 0
-        return perim
+            return 0
+        return (self.__width + self.__height) * 2
 
     def __str__(self):
         grid = ""
@@ -52,7 +52,7 @@ class Rectangle:
 
     def __repr__(self):
         return ("Rectangle({}, {})".format(self.width, self.height))
-    """
+
     def __del__(self):
         print("Bye rectangle...")
         self.__class__.number_of_instances -= 1
@@ -65,9 +65,6 @@ class Rectangle:
             raise TypeError("rect_2 must be an instance of Rectangle")
         if rect_1.area() >= rect_2.area():
             return rect_1
-        else:
-            return rect_2
-    """
 
     @classmethod
     def square(cls, size=0):
