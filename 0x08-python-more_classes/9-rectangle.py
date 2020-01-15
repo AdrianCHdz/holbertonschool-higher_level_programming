@@ -49,10 +49,10 @@ class Rectangle:
         grid = "\n".join(
             [str(self.print_symbol) * self.__width] * self.__height)
         return grid
-    """
+
     def __repr__(self):
         return ("Rectangle({}, {})".format(self.width, self.height))
-
+    """
     def __del__(self):
         print("Bye rectangle...")
         self.__class__.number_of_instances -= 1
