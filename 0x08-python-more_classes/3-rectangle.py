@@ -39,7 +39,8 @@ class Rectangle:
 
     def __str__(self):
         grid = ""
-        if self.__width != 0 or self.__height != 0:
-            grid = "\n".join([grid.join(
-                [("#" * self.__width)])] * self.__height)
+        if self.__width == 0 or self.__height == 0:
+            return grid
+        grid = "\n".join([grid.join(
+            [("#" * self.__width)])] * self.__height)
         return grid
