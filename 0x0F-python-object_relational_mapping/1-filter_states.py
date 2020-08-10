@@ -13,7 +13,7 @@ if __name__ == '__main__':
                    db=argv[3], host="localhost", port=3306)
     query = init.cursor()
     query.execute("""SELECT * FROM states WHERE name LIKE 'N%' ORDER BY
-    states.id""")
+    states.id ASC""")
     results = query.fetchall()
     for row in results:
         print(row)
