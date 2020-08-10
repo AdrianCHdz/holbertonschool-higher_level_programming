@@ -13,18 +13,14 @@ if __name__ == '__main__':
     state = argv[4]
 
     search = """SELECT cities.name
-                FROM cities INNER JOIN states
+                FROM cities JOIN states
                 ON cities.state_id = states.id
-                AND states.name LIKE %s
-                ORDER BY state_id"""
+                WHERE states.name = %s
+                ORDER BY state_id ASC"""
 
-    query.execute(search, [state])
+    query.execute(search, (state,))
 
     results = query.fetchall()
-    """
-    for row in results:
-        print("{}".format(row[0]), end=", ")
-    """
-    print(", ".join([row[0] for row in results]))
+    print(', '.join([row[0] for row in results]))
     query.close()
     init.close()
