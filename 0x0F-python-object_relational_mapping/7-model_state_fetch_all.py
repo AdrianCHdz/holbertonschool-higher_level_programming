@@ -14,6 +14,6 @@ if __name__ == '__main__':
     query = session.query(State).order_by(State.id).all()
 
     for result in query:
-        print(f"{result.id}: {result.name}")
+        print("{}: {}".format(result.id, result.name))
 
     session.close()
