@@ -5,13 +5,14 @@ doc
 from sys import argv
 from MySQLdb import connect
 
-if __name__ == '__min__':
+if __name__ == '__main__':
 
     init = connect(user=argv[1], passwd=argv[2],
                    db=argv[3], host="localhost", port=3306)
     query = init.cursor()
     state = argv[4]
-    search = "SELECT * FROM states WHERE name LIKE '{}' ORDER BY states.id"
+    print(state)
+    search = "SELECT * FROM states WHERE name= '{}' ORDER BY states.id"
     search = search.format(state)
     query.execute(search)
 
