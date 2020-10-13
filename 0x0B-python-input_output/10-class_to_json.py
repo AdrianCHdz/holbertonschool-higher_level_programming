@@ -2,9 +2,6 @@
 """docs for module"""
 
 
-from json import loads
-
-
 def class_to_json(obj):
     """
     Function that returns the dictionay description
