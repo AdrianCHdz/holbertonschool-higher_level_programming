@@ -19,9 +19,10 @@ class Student:
         """
         dict_cpy = {}
         if attrs:
-            for n, m in self.__dict__.items():
-                if n in attrs:
-                    dict_cpy[n] = m
+            if attrs != []:
+                for n, m in self.__dict__.items():
+                    if n in attrs:
+                        dict_cpy[n] = m
         else:
             dict_cpy = self.__dict__
         return dict_cpy
